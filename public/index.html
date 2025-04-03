@@ -17,7 +17,7 @@
 
     <script>
         function sendLog(type) {
-            const message = document.getElementById('logMessage').value;
+            const message = document.getElementById('logMessage').value.trim();
             fetch('/log', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

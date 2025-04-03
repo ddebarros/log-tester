@@ -10,18 +10,19 @@ app.post("/log", (req, res) => {
 
   switch (type) {
     case "info":
-      console.log(`INFO: ${message}`);
+      console.log(message);
       break;
     case "error":
-      console.error(`ERROR: ${message}`);
+      console.error(message);
       break;
     case "warning":
-      console.warn(`WARNING: ${message}`);
+      console.warn(message);
       break;
     case "debug":
-      console.debug(`DEBUG: ${message}`);
+      console.debug(message);
       break;
     default:
+      console.error("Invalid log type");
       return res.status(400).json({ error: "Invalid log type" });
   }
 
